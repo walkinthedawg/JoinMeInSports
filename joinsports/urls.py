@@ -15,6 +15,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from sports import views
+from .settings import MEDIA_ROOT
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

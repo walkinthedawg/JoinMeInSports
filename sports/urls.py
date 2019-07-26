@@ -15,9 +15,15 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from . import views
+from .views import get_sports, sport_detail, create_or_edit_sport, sports
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', sports, name='sports'),
     url(r'^$', views.index, name='index'),
     url(r'^about', views.about, name='about'),
+    url(r'^$', get_sports, name='get_sports'),
+    url(r'^(?P<pk>\d+)/$', sport_detail, name='sport_detail'),
+    url(r'^(?P<pk>\d+)/edit/$', create_or_edit_sport, name='edit_sport')
 ]
