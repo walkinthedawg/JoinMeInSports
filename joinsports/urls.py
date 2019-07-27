@@ -15,6 +15,9 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from sports import views
+from django.views.generic import RedirectView
+from django.views.static import serve
+from django.views import static
 from .settings import MEDIA_ROOT
 
 urlpatterns = [
@@ -23,4 +26,6 @@ urlpatterns = [
     url(r'^', include('sports.urls')),
     url(r'^index', include('sports.urls')),
     url(r'^about', include('sports.urls')),
+    url(r'^$', RedirectView.as_view(url='sports/')),
+    url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT})
 ]

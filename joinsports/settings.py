@@ -31,13 +31,13 @@ ALLOWED_HOSTS = ['4434fcc28a9b4733b99ff34495528b3c.vfs.cloud9.us-east-1.amazonaw
 # Application definition
 
 INSTALLED_APPS = [
-    'sports',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'sports',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +64,7 @@ TEMPLATES = [
                 'django.template.context_processors.media',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -122,5 +123,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-MEDIA_ROOT = (os.path.join(BASE_DIR, 'media'),)
+
+
