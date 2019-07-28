@@ -19,7 +19,11 @@ def sports(request):
     """
     sports = Sport.objects.order_by('name')
     return render(request, "sports.html", {'sports': sports})
-
+    
+def admin(request):
+    """ A view to display the index page """
+    return render(request, 'admin.html')
+    
 
 
 def get_sports(request):
